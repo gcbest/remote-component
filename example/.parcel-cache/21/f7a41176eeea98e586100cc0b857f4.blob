@@ -1,0 +1,84 @@
+var helpers = require("./node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  require('react-app-polyfill/ie11');
+  var _react = require('react');
+  var _reactDom = require('react-dom');
+  var _loadableComponent = require('@loadable/component');
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  var _loadableComponentDefault = _parcelHelpers.interopDefault(_loadableComponent);
+  var _jsxFileName = "/Users/godfreybest/Documents/Learning-Web-Dev/React/remote-components/example/index.tsx";
+  // // import { Thing } from '../src';
+  const Thing = _loadableComponentDefault.default(() => require('../src'));
+  // // const ExampleComponent = loadable(() => import('https://cdn.skypack.dev/gb-react-comp-test'))
+  // // import { ExampleComponent } from 'https://cdn.skypack.dev/gb-react-comp-test';
+  // const ExampleComponent = loadable(() => import(/* webpackIgnore: true */ 'https://cdn.skypack.dev/gb-react-comp-test'));
+  // import {ExampleComponent} from 'https://cdn.skypack.dev/gb-react-comp-test';
+  // const ExampleComponent = React.lazy(() => import('https://cdn.skypack.dev/gb-react-comp-test').then(comp => console.log(JSON.stringify(comp, null, 2))));
+  const ExampleComponent = /*#__PURE__*/_react.lazy(() => require('../src'));
+  // const lodash = import('https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js');
+  // lodash.then(() => console.log(_.VERSION));
+  // let ExampleComponent;
+  // async function getComponent() {
+  // // const confetti = await import (/* webpackIgnore: true */ 'https://cdn.skypack.dev/canvas-confetti');
+  // ExampleComponent = await import (/* webpackIgnore: true */ 'https://cdn.skypack.dev/gb-react-comp-test');
+  // }
+  const App = () => {
+    _react.useEffect(() => {
+      console.log('Hooks are working app');
+    }, []);
+    return (
+      /*#__PURE__*/_react.createElement("div", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 38,
+          columnNumber: 5
+        }
+      }, /*#__PURE__*/_react.createElement(Thing, {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 39,
+          columnNumber: 7
+        }
+      }), /*#__PURE__*/_react.createElement(_react.Suspense, {
+        fallback: /*#__PURE__*/_react.createElement("div", {
+          __self: undefined,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 40,
+            columnNumber: 33
+          }
+        }, "Loading..."),
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 40,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_react.createElement(ExampleComponent, {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 41,
+          columnNumber: 9
+        }
+      })))
+    );
+  };
+  _reactDom.render(/*#__PURE__*/_react.createElement(App, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47,
+      columnNumber: 17
+    }
+  }), document.getElementById('root'));
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

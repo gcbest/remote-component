@@ -1,0 +1,65 @@
+var helpers = require("./node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  require('react-app-polyfill/ie11');
+  var _react = require('react');
+  var _reactDom = require('react-dom');
+  var _loadableComponent = require('@loadable/component');
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  var _loadableComponentDefault = _parcelHelpers.interopDefault(_loadableComponent);
+  var _jsxFileName = "/Users/godfreybest/Documents/Learning-Web-Dev/React/remote-components/example/index.tsx";
+  // import { Thing } from '../src';
+  const Thing = _loadableComponentDefault.default(() => require('../src'));
+  // const ExampleComponent = loadable(() => import('https://cdn.skypack.dev/gb-react-comp-test'))
+  // import { ExampleComponent } from 'https://cdn.skypack.dev/gb-react-comp-test';
+  let ExampleComponent;
+  async function getComponent() {
+    // const confetti = await import (/* webpackIgnore: true */ 'https://cdn.skypack.dev/canvas-confetti');
+    ExampleComponent = await import(/*webpackIgnore: true*/
+    'https://cdn.skypack.dev/gb-react-comp-test');
+  }
+  getComponent();
+  _react.useEffect(() => {
+    console.log('Hooks are working app');
+  }, []);
+  const App = () => {
+    return (
+      /*#__PURE__*/_react.createElement("div", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26,
+          columnNumber: 5
+        }
+      }, /*#__PURE__*/_react.createElement(Thing, {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 27,
+          columnNumber: 7
+        }
+      }), /*#__PURE__*/_react.createElement(ExampleComponent, {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 28,
+          columnNumber: 7
+        }
+      }))
+    );
+  };
+  _reactDom.render(/*#__PURE__*/_react.createElement(App, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33,
+      columnNumber: 17
+    }
+  }), document.getElementById('root'));
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

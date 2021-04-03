@@ -1,0 +1,6 @@
+"use strict";
+if ("development" === 'production') {
+  module.exports = require('./remote-components.cjs.production.min.js');
+} else {
+  module.exports = require('./remote-components.cjs.development.js');
+}

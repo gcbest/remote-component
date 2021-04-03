@@ -1,0 +1,1 @@
+module.exports = (require("./loaders/browser/js-loader")(require('./bundle-url').getBundleURL() + "remote-components.HASH_REF_a81a65dc8266d327391a63092838f45d.js").catch(err => {delete module.bundle.cache[module.id]; throw err;})).then(() => module.bundle.root('3e8AM'));

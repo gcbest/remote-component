@@ -1,0 +1,32 @@
+var helpers = require("../example/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  _parcelHelpers.export(exports, "Thing", function () {
+    return Thing;
+  });
+  var _react = require('react');
+  var _jsxFileName = "/Users/godfreybest/Documents/Learning-Web-Dev/React/remote-components/src/index.tsx";
+  const Thing = () => {
+    return (
+      /*#__PURE__*/_react.createElement("div", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 5,
+          columnNumber: 10
+        }
+      }, "the snozzberries taste like snozzberries")
+    );
+  };
+  _c = Thing;
+  var _c;
+  $RefreshReg$(_c, "Thing");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
